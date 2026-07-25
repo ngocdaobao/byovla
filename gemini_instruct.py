@@ -79,8 +79,8 @@ def gemini_flash(im, language_instruction):
             ),
             response_mime_type="application/json",
             response_schema=TaskRelevanceResponse,
-            max_output_tokens=300,
-            temperature=0.2,
+            max_output_tokens=2000,
+            temperature=0.7,
         ),
     )
 
@@ -110,7 +110,7 @@ if __name__ == "__main__":
 
                 img_pil = Image.open(file_path)
                 response_json = gemini_flash(img_pil, language_instruction)
-
+                print(f"Task: {language_instruction}")
                 # Save output to JSON file
                 output_json_path = os.path.join(save_dir, f"{language_instruction}.json")
                 with open(output_json_path, "w", encoding="utf-8") as f:
