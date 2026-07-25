@@ -2,6 +2,7 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 from PIL import Image
+import os
 
 class TaskRelevanceResponse(BaseModel):
     not_relevant_objects: list[str] = Field(description="List of objects in the image that are not relevant for completing the task")
