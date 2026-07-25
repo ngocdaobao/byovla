@@ -88,8 +88,8 @@ def gemini_flash(im, language_instruction):
 
 if __name__ == "__main__":
     # Define directories
-    widowx_path = "widowx_images"
-    google_path = "google_images"
+    widowx_path = "widowx"
+    google_path = "google"
 
     dataset_dirs = [
         (widowx_path, "output/json/widowx"),
