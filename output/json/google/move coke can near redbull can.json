@@ -1,0 +1,11 @@
+{
+  "not_relevant_objects": [
+    "apple"
+  ],
+  "not_relevant_backgrounds": [
+    "table",
+    "wall",
+    "floor",
+    "robot arm"
+  ]
+}

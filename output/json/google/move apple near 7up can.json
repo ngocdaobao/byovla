@@ -1,0 +1,10 @@
+{
+  "not_relevant_objects": [
+    "sponge"
+  ],
+  "not_relevant_backgrounds": [
+    "table",
+    "wall",
+    "floor"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "not_relevant_objects": [
+    "can"
+  ],
+  "not_relevant_backgrounds": [
+    "wall",
+    "floor"
+  ]
+}

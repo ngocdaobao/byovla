@@ -100,7 +100,7 @@ if __name__ == "__main__":
     google_path = "google"
 
     dataset_dirs = [
-        (widowx_path, "output/json/widowx"),
+        # (widowx_path, "output/json/widowx"),
         (google_path, "output/json/google"),
     ]
 
@@ -112,15 +112,21 @@ if __name__ == "__main__":
         for task_name in task:
             obs_dir = os.path.join(source_dir, task_name)
             for filename in os.listdir(obs_dir):
+                
                 if filename.lower().endswith(".png"):
                     file_path = os.path.join(obs_dir, filename)
-                language_instruction = os.path.splitext(filename)[0]
-
+                else:
+                    continue
+                
+                language_instruction = filename.split('_')[0]
+                output_json_path = os.path.join(save_dir, f"{language_instruction}.json")
+                if os.path.exists(output_json_path):
+                    continue  # Skip if output JSON already exists
                 img_pil = Image.open(file_path)
                 response_json = gemini_flash(img_pil, language_instruction)
                 print(f"Task: {language_instruction}")
                 # Save output to JSON file
-                output_json_path = os.path.join(save_dir, f"{language_instruction}.json")
+                
                 with open(output_json_path, "w", encoding="utf-8") as f:
                     f.write(response_json)
                 print(f"Saved: {output_json_path}")

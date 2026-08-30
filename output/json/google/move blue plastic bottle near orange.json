@@ -1,0 +1,11 @@
+{
+  "not_relevant_objects": [
+    "soda can"
+  ],
+  "not_relevant_backgrounds": [
+    "table",
+    "drawers",
+    "wall",
+    "floor"
+  ]
+}

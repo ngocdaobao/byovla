@@ -1,0 +1,11 @@
+{
+  "not_relevant_objects": [
+    "water bottle"
+  ],
+  "not_relevant_backgrounds": [
+    "table",
+    "wall",
+    "floor",
+    "robotic arm"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "not_relevant_objects": [
+    "top drawer",
+    "middle drawer",
+    "desk items",
+    "storage bin",
+    "leg"
+  ],
+  "not_relevant_backgrounds": [
+    "wall",
+    "floor",
+    "desk"
+  ]
+}
