@@ -89,6 +89,13 @@ def gemini_flash(im, language_instruction):
 
 if __name__ == "__main__":
     # Define directories
+    task = [
+        "google_robot_close_drawer",
+        "google_robot_move_near",
+        "google_robot_open_drawer",
+        "google_robot_pick_coke_can",
+        "google_robot_place_apple_in_closed_top_drawer"
+    ]
     widowx_path = "widowx"
     google_path = "google"
 
@@ -102,10 +109,11 @@ if __name__ == "__main__":
             continue
 
         os.makedirs(save_dir, exist_ok=True)
-
-        for filename in os.listdir(source_dir):
-            if filename.lower().endswith(".png"):
-                file_path = os.path.join(source_dir, filename)
+        for task_name in task:
+            obs_dir = os.path.join(source_dir, task_name)
+            for filename in os.listdir(obs_dir):
+                if filename.lower().endswith(".png"):
+                    file_path = os.path.join(obs_dir, filename)
                 language_instruction = os.path.splitext(filename)[0]
 
                 img_pil = Image.open(file_path)
